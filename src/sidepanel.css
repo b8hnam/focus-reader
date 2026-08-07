@@ -56,3 +56,10 @@ body {
 }
 .sig { color: var(--muted); text-decoration: none; font-weight: 700; letter-spacing: .3px; }
 .sig:hover { color: var(--accent-text); }
+
+/* Scrollbar — themed to match the rest of the UI instead of the OS default */
+* { scrollbar-width: thin; scrollbar-color: var(--accent-soft) transparent; }
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--accent-soft); border-radius: 20px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); background-clip: padding-box; }

@@ -164,6 +164,7 @@
 
   const MAX_WINS = 8;
   const MIN_W = 288, MIN_H = 46, DOCK_GAP = 8;
+  const RESIZE_MIN_W = 320, RESIZE_MIN_H = 220; // floor for dragging a normal window's edges
 
   let host, shadow, stage, scrimEl, miniBar, bubble;
   const wins = [];
@@ -249,6 +250,18 @@
                 width .42s var(--spring), height .42s var(--spring),
                 border-radius .34s var(--spring), opacity .22s ease, transform .28s var(--spring); }
   .win.dragging { transition: none; }
+  .win.resizing { transition: none; }
+
+  .rzone { position: absolute; pointer-events: auto; z-index: 2; }
+  .rzone.e  { inset-inline-end: -4px; inset-block: 8px; width: 8px; cursor: ew-resize; }
+  .rzone.w  { inset-inline-start: -4px; inset-block: 8px; width: 8px; cursor: ew-resize; }
+  .rzone.n  { inset-block-start: -4px; inset-inline: 8px; height: 8px; cursor: ns-resize; }
+  .rzone.s  { inset-block-end: -4px; inset-inline: 8px; height: 8px; cursor: ns-resize; }
+  .rzone.ne { inset-block-start: -4px; inset-inline-end: -4px; width: 16px; height: 16px; cursor: nesw-resize; }
+  .rzone.nw { inset-block-start: -4px; inset-inline-start: -4px; width: 16px; height: 16px; cursor: nwse-resize; }
+  .rzone.se { inset-block-end: -4px; inset-inline-end: -4px; width: 16px; height: 16px; cursor: nwse-resize; }
+  .rzone.sw { inset-block-end: -4px; inset-inline-start: -4px; width: 16px; height: 16px; cursor: nesw-resize; }
+  .win.is-min .rzone, .win.is-max .rzone { display: none; }
   .win.closing { opacity: 0; transform: scale(.93); }
   .win.is-min { border-radius: 23px; }
   .win.is-min .bar, .win.is-min .sheetbar, .win.is-min .content, .win.is-min .foot { display: none; }
@@ -363,7 +376,18 @@
   .sig { color: var(--muted); text-decoration: none; opacity: .75; font-weight: 700; letter-spacing: .3px; }
   .sig:hover { color: var(--accent-text); opacity: 1; }
 
-  @media (max-width: 620px) { .body { padding: 20px 22px; } }`;
+  @media (max-width: 620px) { .body { padding: 20px 22px; } }
+
+  /* Scrollbar — themed to match the popup, side panel, and site */
+  .content, .library, .body pre { scrollbar-width: thin; scrollbar-color: var(--accent-soft) transparent; }
+  .content::-webkit-scrollbar, .library::-webkit-scrollbar, .body pre::-webkit-scrollbar { width: 9px; height: 9px; }
+  .content::-webkit-scrollbar-track, .library::-webkit-scrollbar-track, .body pre::-webkit-scrollbar-track { background: transparent; }
+  .content::-webkit-scrollbar-thumb, .library::-webkit-scrollbar-thumb, .body pre::-webkit-scrollbar-thumb {
+    background: var(--accent-soft); border-radius: 20px; border: 2px solid transparent; background-clip: padding-box;
+  }
+  .content::-webkit-scrollbar-thumb:hover, .library::-webkit-scrollbar-thumb:hover, .body pre::-webkit-scrollbar-thumb:hover {
+    background: var(--accent); background-clip: padding-box;
+  }`;
 
   /* ---------- rich text capture ---------- */
 
@@ -554,6 +578,11 @@
         </div>
       </div>
 
+      <span class="rzone n"></span><span class="rzone s"></span>
+      <span class="rzone e"></span><span class="rzone w"></span>
+      <span class="rzone ne"></span><span class="rzone nw"></span>
+      <span class="rzone se"></span><span class="rzone sw"></span>
+
       <div class="bar tools">
         ${toolBtn("translate", "translate", "tipTranslate")}
         ${toolBtn("ai", "ai", "tipAI")}
@@ -652,6 +681,10 @@
     w.title.addEventListener("dblclick", (e) => {
       if (e.target.closest("[data-act]")) return;
       act(w, w.state === "min" ? "minimize" : "maximize");
+    });
+    el.querySelectorAll(".rzone").forEach((zone) => {
+      const edge = zone.className.split(" ")[1]; // n, s, e, w, ne, nw, se, sw
+      zone.addEventListener("mousedown", (e) => startResize(w, e, edge));
     });
 
     stage.appendChild(el);
@@ -779,6 +812,45 @@
     if (index >= 0) wins.splice(index, 1);
     setTimeout(() => { w.el.remove(); layoutDock(); syncScrim(); }, silent ? 0 : 240);
     layoutDock(); syncScrim(); schedulePinSave();
+  }
+
+  function startResize(w, e, edge) {
+    if (e.button !== 0 || w.state !== "normal") return;
+    const startX = e.clientX, startY = e.clientY;
+    const origin = { ...w.geom };
+    raise(w);
+    w.el.classList.add("resizing");
+    e.preventDefault();
+    e.stopPropagation(); // don't also trigger startDrag via the titlebar
+
+    const move = (ev) => {
+      const dx = ev.clientX - startX, dy = ev.clientY - startY;
+      let { x, y, w: width, h: height } = origin;
+
+      if (edge.includes("e")) width = origin.w + dx;
+      if (edge.includes("w")) { width = origin.w - dx; x = origin.x + dx; }
+      if (edge.includes("s")) height = origin.h + dy;
+      if (edge.includes("n")) { height = origin.h - dy; y = origin.y + dy; }
+
+      if (width < RESIZE_MIN_W) { if (edge.includes("w")) x -= RESIZE_MIN_W - width; width = RESIZE_MIN_W; }
+      if (height < RESIZE_MIN_H) { if (edge.includes("n")) y -= RESIZE_MIN_H - height; height = RESIZE_MIN_H; }
+
+      // keep at least a sliver of the window reachable on screen, same spirit as clampWin()
+      x = Math.min(Math.max(-width + 80, x), window.innerWidth - 80);
+      y = Math.min(Math.max(0, y), window.innerHeight - 40);
+
+      w.geom = { x, y, w: width, h: height };
+      applyGeom(w);
+    };
+    const up = () => {
+      w.el.classList.remove("resizing");
+      window.removeEventListener("mousemove", move, true);
+      window.removeEventListener("mouseup", up, true);
+      w.saved = { ...w.geom };
+      schedulePinSave();
+    };
+    window.addEventListener("mousemove", move, true);
+    window.addEventListener("mouseup", up, true);
   }
 
   function startDrag(w, e) {

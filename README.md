@@ -55,7 +55,7 @@ Each one can be switched off independently from the settings popup:
 
 ## Inside the panel
 
-**Windows, plural.** Every time you open the reader you get a new window — up to eight at once. Minimize, maximize, close, drag by the title bar, double-click the title bar to maximize, `Esc` to close the front one. Every state change is animated with an iOS-style spring curve.
+**Windows, plural.** Every time you open the reader you get a new window — up to eight at once. Minimize, maximize, close, drag by the title bar, resize by dragging any edge or corner, double-click the title bar to maximize, `Esc` to close the front one. Every state change is animated with an iOS-style spring curve.
 
 **The dock.** Minimized windows stack on each other in a corner, like taskbar buttons. Drag any one of them and the whole stack moves. Click a stacked window's restore button (or double-click it) to bring it back to the size and position it had.
 

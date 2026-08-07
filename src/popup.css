@@ -108,3 +108,10 @@ button.ghost:hover { color: var(--accent-text); border-color: var(--accent); }
 .note { margin-top: 8px; font-size: 10.5px; color: var(--muted); line-height: 1.7; }
 #note { text-align: center; }
 .note.ok { color: var(--accent-text); }
+
+/* Scrollbar — themed to match the rest of the UI instead of the OS default */
+* { scrollbar-width: thin; scrollbar-color: var(--accent-soft) transparent; }
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--accent-soft); border-radius: 20px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); background-clip: padding-box; }

@@ -8,6 +8,15 @@ This project is not actively maintained — see the note in the README. Gaps bet
 
 ## [Unreleased]
 
+Nothing yet.
+
+## [1.9.0] — 2026-08-07
+
+### Added
+
+- **Resizable windows** — every edge and corner of a normal (non-maximized, non-minimized) window can now be dragged to resize it, the same as any native OS window. Works together with the existing drag-to-move, maximize, and minimize; resized dimensions are what "restore" returns to after maximizing, and what a pinned window remembers across pages.
+- **Themed scrollbars** — scrollbars in the settings popup, the side panel, and the reader window now follow the current accent colour and theme instead of the browser's default grey, matching the site.
+
 ### Fixed
 
 - Dark mode: the "Translate into" language list (and other `<select>` dropdowns) showed unreadable light-grey-on-white options because only the closed box was themed, not the open list. Options are now explicitly themed to match dark/light mode.
@@ -43,5 +52,6 @@ First public release. Earlier versions were private builds used by the author an
 - The content script stays inert until first use — four passive listeners on page load and nothing else.
 - No servers, no analytics, no accounts. See `PRIVACY.md`.
 
-[Unreleased]: https://github.com/byb8hnam/focus-reader/compare/v1.8.0...HEAD
-[1.8.0]: https://github.com/byb8hnam/focus-reader/releases/tag/v1.8.0
+[Unreleased]: https://github.com/b8hnam/focus-reader/compare/v1.9.0...HEAD
+[1.9.0]: https://github.com/b8hnam/focus-reader/compare/v1.8.0...v1.9.0
+[1.8.0]: https://github.com/b8hnam/focus-reader/releases/tag/v1.8.0
