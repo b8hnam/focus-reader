@@ -51,10 +51,10 @@ Where things live:
 
 1. Move the `## [Unreleased]` entries into a new version section in `CHANGELOG.md`, with the date.
 2. Set the new `version` in `src/manifest.json`.
-3. Commit, then `git tag v1.9.0 && git push origin v1.9.0`.
+3. Commit, then `git tag v1.10.0 && git push origin v1.10.0`.
 4. `.github/workflows/release.yml` checks that the tag matches the manifest, validates the extension, zips the contents of `src/` (with `LICENSE`, `TRADEMARK.md` and `PRIVACY.md` added), and publishes the release with the changelog section as its notes.
 
-A version mismatch between tag and manifest fails the build on purpose. To retry: `git tag -d v1.9.0 && git push origin :v1.9.0`, fix, tag again.
+A version mismatch between tag and manifest fails the build on purpose. To retry: `git tag -d v1.10.0 && git push origin :v1.10.0`, fix, tag again.
 
 ---
 
@@ -99,9 +99,9 @@ A version mismatch between tag and manifest fails the build on purpose. To retry
 
 ۱. سطرهای زیر `## [Unreleased]` را در `CHANGELOG.md` به بخش نسخه‌ی تازه با تاریخش منتقل کنید.
 ۲. مقدار `version` را در `src/manifest.json` به‌روز کنید.
-۳. تغییرها را ثبت کنید، بعد `git tag v1.9.0 && git push origin v1.9.0`.
+۳. تغییرها را ثبت کنید، بعد `git tag v1.10.0 && git push origin v1.10.0`.
 ۴. جریان `.github/workflows/release.yml` بررسی می‌کند برچسب با مانیفست یکی باشد، افزونه را وارسی می‌کند، محتوای `src` را (به‌همراه `LICENSE` و `TRADEMARK.md` و `PRIVACY.md`) فشرده می‌کند و نسخه را با متن همان بخش تاریخچه منتشر می‌کند.
 
-ناهماهنگی برچسب و مانیفست عمداً ساخت را ناموفق می‌کند. برای تلاش دوباره: `git tag -d v1.9.0 && git push origin :v1.9.0`، اصلاح کنید و دوباره برچسب بزنید.
+ناهماهنگی برچسب و مانیفست عمداً ساخت را ناموفق می‌کند. برای تلاش دوباره: `git tag -d v1.10.0 && git push origin :v1.10.0`، اصلاح کنید و دوباره برچسب بزنید.
 
 </div>

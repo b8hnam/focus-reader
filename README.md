@@ -4,7 +4,7 @@ Open any selected text in a clean reading panel — right-to-left and left-to-ri
 
 A Chrome extension in plain JavaScript. No build step, no framework, no bundler, no server.
 
-Built by **byB8** · [by.b8hnam.com](https://by.b8hnam.com/) · [فارسی](README.fa.md)
+Built byB8 · [by.b8hnam.com](https://by.b8hnam.com/) · [فارسی](README.fa.md)
 
 ---
 
@@ -118,7 +118,7 @@ There is no build step. Edit a file in `src/`, reload the extension on `chrome:/
 
 ## Releases
 
-Pushing a tag such as `v1.8.0` triggers [`.github/workflows/release.yml`](.github/workflows/release.yml), which checks that the tag matches the `version` field in `src/manifest.json`, zips the **contents** of `src/` (Chrome requires `manifest.json` at the root of the archive), and publishes the zip as a GitHub release asset. See [CONTRIBUTING.md](CONTRIBUTING.md) for the exact steps.
+Pushing a tag such as `v1.9.0` triggers [`.github/workflows/release.yml`](.github/workflows/release.yml), which checks that the tag matches the `version` field in `src/manifest.json`, zips the **contents** of `src/` (Chrome requires `manifest.json` at the root of the archive), and publishes the zip as a GitHub release asset. See [CONTRIBUTING.md](CONTRIBUTING.md) for the exact steps.
 
 ## Contributing
 

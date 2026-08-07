@@ -6,7 +6,7 @@
 
 یک افزونه‌ی کروم با جاوااسکریپت خالص. بدون مرحله‌ی ساخت، بدون فریم‌ورک، بدون سرور.
 
-ساخته‌ی **byB8** · [by.b8hnam.com](https://by.b8hnam.com/) · [English](README.md)
+ساخته‌ی **B8hnam** · [by.b8hnam.com](https://by.b8hnam.com/) · [English](README.md)
 
 ---
 
@@ -124,7 +124,7 @@ TRADEMARK.md          چیزهایی که پروانه شاملشان نمی‌�
 
 ## انتشار نسخه‌ها
 
-با فرستادن برچسبی مثل `v1.8.0` جریان [`.github/workflows/release.yml`](.github/workflows/release.yml) اجرا می‌شود: بررسی می‌کند برچسب با مقدار `version` در `src/manifest.json` یکی باشد، **محتوای** پوشه‌ی `src` را فشرده می‌کند (کروم لازم دارد `manifest.json` در ریشه‌ی پرونده‌ی فشرده باشد) و آن را به‌عنوان پیوست نسخه در گیت‌هاب منتشر می‌کند. مراحل دقیقش در [CONTRIBUTING.md](CONTRIBUTING.md) آمده است.
+با فرستادن برچسبی مثل `v1.9.0` جریان [`.github/workflows/release.yml`](.github/workflows/release.yml) اجرا می‌شود: بررسی می‌کند برچسب با مقدار `version` در `src/manifest.json` یکی باشد، **محتوای** پوشه‌ی `src` را فشرده می‌کند (کروم لازم دارد `manifest.json` در ریشه‌ی پرونده‌ی فشرده باشد) و آن را به‌عنوان پیوست نسخه در گیت‌هاب منتشر می‌کند. مراحل دقیقش در [CONTRIBUTING.md](CONTRIBUTING.md) آمده است.
 
 ## مشارکت
 
