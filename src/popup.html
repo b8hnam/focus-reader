@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Focus Reader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="sheet">
+    <header class="head">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <h1>Focus Reader</h1>
+        <a class="by" href="https://by.b8hnam.com/" target="_blank" rel="noopener noreferrer">byB8</a>
+      </div>
+    </header>
+
+    <div class="cols">
+      <div class="col">
+        <section>
+          <h2 data-i18n="settingsHow"></h2>
+          <ul class="rows">
+            <li>
+              <label for="trgButton">
+                <span class="name" data-i18n="trgButton"></span>
+                <span class="hint" data-i18n="trgButtonHint"></span>
+              </label>
+              <input type="checkbox" id="trgButton" class="switch">
+            </li>
+            <li>
+              <label for="trgKey">
+                <span class="name" data-i18n="trgKey"></span>
+                <span class="hint" id="keyHint"></span>
+              </label>
+              <input type="checkbox" id="trgKey" class="switch">
+            </li>
+            <li>
+              <label for="trgMenu">
+                <span class="name" data-i18n="trgMenu"></span>
+                <span class="hint" data-i18n="trgMenuHint"></span>
+              </label>
+              <input type="checkbox" id="trgMenu" class="switch">
+            </li>
+          </ul>
+          <button type="button" id="shortcut" class="ghost" data-i18n="changeShortcut"></button>
+        </section>
+
+        <section>
+          <h2 data-i18n="settingsLook"></h2>
+
+          <div class="field">
+            <span class="label" data-i18n="theme"></span>
+            <div class="seg" id="theme">
+              <button type="button" data-value="light" data-i18n="themeLight"></button>
+              <button type="button" data-value="dark" data-i18n="themeDark"></button>
+              <button type="button" data-value="system" data-i18n="themeSystem"></button>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="label" data-i18n="settingsColour"></span>
+            <div class="seg" id="accent">
+              <button type="button" data-value="brand" data-i18n="colourBrand"></button>
+              <button type="button" data-value="moss" data-i18n="colourMoss"></button>
+              <button type="button" data-value="random" data-i18n="colourRandom"></button>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="label" data-i18n="fontLabel"></span>
+            <div class="seg" id="fontFamily">
+              <button type="button" data-value="vazir" data-i18n="fontVazir"></button>
+              <button type="button" data-value="sans" data-i18n="fontSans"></button>
+              <button type="button" data-value="serif" data-i18n="fontSerif"></button>
+              <button type="button" data-value="mono" data-i18n="fontMono"></button>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="label" data-i18n="lineHeight"></span>
+            <div class="seg" id="lineHeight">
+              <button type="button" data-value="1.7" data-i18n="lineTight"></button>
+              <button type="button" data-value="2" data-i18n="lineNormal"></button>
+              <button type="button" data-value="2.4" data-i18n="lineLoose"></button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col">
+        <section>
+          <h2 data-i18n="settingsPanel"></h2>
+          <div class="field">
+            <span class="label" data-i18n="trTargetLabel"></span>
+            <select id="trTarget" class="text"></select>
+          </div>
+          <ul class="rows">
+            <li>
+              <label for="dimPage">
+                <span class="name" data-i18n="optDim"></span>
+                <span class="hint" data-i18n="optDimHint"></span>
+              </label>
+              <input type="checkbox" id="dimPage" class="switch">
+            </li>
+            <li>
+              <label for="trWeb">
+                <span class="name" data-i18n="trWebLabel"></span>
+                <span class="hint" data-i18n="trWebHint"></span>
+              </label>
+              <input type="checkbox" id="trWeb" class="switch">
+            </li>
+            <li>
+              <label for="ttsWeb">
+                <span class="name" data-i18n="ttsWebLabel"></span>
+                <span class="hint" data-i18n="ttsWebHint"></span>
+              </label>
+              <input type="checkbox" id="ttsWeb" class="switch">
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 data-i18n="settingsAI"></h2>
+
+          <div class="field">
+            <span class="label" data-i18n="aiProvider"></span>
+            <div class="seg" id="aiProvider">
+              <button type="button" data-value="openai" data-i18n="aiProviderOpenAI"></button>
+              <button type="button" data-value="anthropic" data-i18n="aiProviderAnthropic"></button>
+              <button type="button" data-value="gemini" data-i18n="aiProviderGemini"></button>
+              <button type="button" data-value="custom" data-i18n="aiProviderCustom"></button>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="label" data-i18n="aiKeyLabel"></span>
+            <input type="password" id="aiKey" class="text" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="field">
+            <span class="label" data-i18n="aiModelLabel"></span>
+            <input type="text" id="aiModel" class="text" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="field">
+            <span class="label" data-i18n="aiBaseLabel"></span>
+            <input type="text" id="aiBase" class="text" autocomplete="off" spellcheck="false">
+          </div>
+
+          <button type="button" id="aiTest" class="wide" data-i18n="aiTest"></button>
+          <p class="note" id="aiNote" data-i18n="aiKeyNote"></p>
+        </section>
+
+        <div class="actions">
+          <button type="button" id="readPage" class="wide" data-i18n="readPage"></button>
+          <button type="button" id="openLibrary" class="wide" data-i18n="openLibrary"></button>
+          <button type="button" id="openSide" class="wide" data-i18n="openSide"></button>
+        </div>
+        <p class="note" id="note" hidden></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="palette.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

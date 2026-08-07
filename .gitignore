@@ -1,0 +1,18 @@
+# Build output
+dist/
+*.zip
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local notes and keys — never commit these
+.env
+*.local
+notes.md

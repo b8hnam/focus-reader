@@ -1,0 +1,404 @@
+{
+  "extName": {
+    "message": "Focus Reader"
+  },
+  "extShortName": {
+    "message": "Focus Reader"
+  },
+  "extDesc": {
+    "message": "Open any selected text in a clean reading panel — right-to-left and left-to-right, dark mode, editing, AI actions, and saved snippets."
+  },
+  "actionTitle": {
+    "message": "Focus Reader — settings"
+  },
+  "menuShow": {
+    "message": "Open in Focus Reader"
+  },
+  "cmdShow": {
+    "message": "Open selected text in Focus Reader"
+  },
+  "settingsHow": {
+    "message": "How to open the panel"
+  },
+  "trgButton": {
+    "message": "Button near selection"
+  },
+  "trgButtonHint": {
+    "message": "A small button appears after you select text."
+  },
+  "trgKey": {
+    "message": "Keyboard shortcut"
+  },
+  "trgMenu": {
+    "message": "Right-click menu"
+  },
+  "trgMenuHint": {
+    "message": "Adds “Open in Focus Reader”."
+  },
+  "changeShortcut": {
+    "message": "Set shortcut"
+  },
+  "shortcutNow": {
+    "message": "Now"
+  },
+  "settingsLook": {
+    "message": "Reading style"
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeLight": {
+    "message": "Light"
+  },
+  "themeDark": {
+    "message": "Dark"
+  },
+  "themeSystem": {
+    "message": "System"
+  },
+  "fontLabel": {
+    "message": "Font"
+  },
+  "fontVazir": {
+    "message": "Vazirmatn"
+  },
+  "fontSans": {
+    "message": "Sans"
+  },
+  "fontSerif": {
+    "message": "Serif"
+  },
+  "fontMono": {
+    "message": "Mono"
+  },
+  "lineHeight": {
+    "message": "Line spacing"
+  },
+  "lineTight": {
+    "message": "Tight"
+  },
+  "lineNormal": {
+    "message": "Normal"
+  },
+  "lineLoose": {
+    "message": "Loose"
+  },
+  "readPage": {
+    "message": "Read this page"
+  },
+  "openLibrary": {
+    "message": "Saved texts"
+  },
+  "pageUnavailable": {
+    "message": "Focus Reader can’t run on this page."
+  },
+  "tipCopy": {
+    "message": "Copy"
+  },
+  "tipSave": {
+    "message": "Save text"
+  },
+  "tipLibrary": {
+    "message": "Saved texts"
+  },
+  "tipReader": {
+    "message": "Back to text"
+  },
+  "tipDownload": {
+    "message": "Download as .txt"
+  },
+  "tipSpeak": {
+    "message": "Read aloud"
+  },
+  "tipStop": {
+    "message": "Stop reading"
+  },
+  "tipClean": {
+    "message": "Fix and tidy the text"
+  },
+  "tipDirection": {
+    "message": "Switch text direction"
+  },
+  "tipSmaller": {
+    "message": "Smaller text"
+  },
+  "tipBigger": {
+    "message": "Larger text"
+  },
+  "tipTheme": {
+    "message": "Theme"
+  },
+  "tipEdit": {
+    "message": "Edit"
+  },
+  "tipEditDone": {
+    "message": "Finish editing"
+  },
+  "tipAI": {
+    "message": "AI actions"
+  },
+  "tipBold": {
+    "message": "Bold"
+  },
+  "tipItalic": {
+    "message": "Italic"
+  },
+  "tipUnderline": {
+    "message": "Underline"
+  },
+  "tipUndo": {
+    "message": "Undo"
+  },
+  "tipReset": {
+    "message": "Restore original text"
+  },
+  "tipMinimize": {
+    "message": "Minimize"
+  },
+  "tipMaximize": {
+    "message": "Maximize"
+  },
+  "tipRestore": {
+    "message": "Restore down"
+  },
+  "tipClose": {
+    "message": "Close"
+  },
+  "tipOpenItem": {
+    "message": "Open"
+  },
+  "tipDeleteItem": {
+    "message": "Delete"
+  },
+  "msgCopied": {
+    "message": "Copied."
+  },
+  "msgCopyFailed": {
+    "message": "Couldn’t copy. Select the text and copy it manually."
+  },
+  "msgSaved": {
+    "message": "Saved."
+  },
+  "msgCleaned": {
+    "message": "Text tidied up."
+  },
+  "msgNoChange": {
+    "message": "Nothing to fix."
+  },
+  "msgNoSelection": {
+    "message": "Select some text on the page first."
+  },
+  "msgNoArticle": {
+    "message": "Couldn’t find readable text on this page."
+  },
+  "msgDeleted": {
+    "message": "Deleted."
+  },
+  "msgDownloaded": {
+    "message": "File saved."
+  },
+  "libraryTitle": {
+    "message": "Saved texts"
+  },
+  "libraryEmpty": {
+    "message": "Nothing saved yet. Use the bookmark button to keep a text here."
+  },
+  "libraryClear": {
+    "message": "Delete all"
+  },
+  "statWords": {
+    "message": "words"
+  },
+  "statChars": {
+    "message": "characters"
+  },
+  "aiSummarize": {
+    "message": "Summarize"
+  },
+  "aiKeyPoints": {
+    "message": "Key points"
+  },
+  "aiSimplify": {
+    "message": "Explain simply"
+  },
+  "aiProofread": {
+    "message": "Fix grammar"
+  },
+  "aiAsk": {
+    "message": "Ask anything about this text…"
+  },
+  "aiRun": {
+    "message": "Run"
+  },
+  "aiWorking": {
+    "message": "Working…"
+  },
+  "aiSettingsLink": {
+    "message": "AI settings"
+  },
+  "aiNotSet": {
+    "message": "Add an API key in the extension settings first."
+  },
+  "aiFailed": {
+    "message": "Request failed"
+  },
+  "aiDone": {
+    "message": "Done — use Restore to bring the original back."
+  },
+  "settingsAI": {
+    "message": "AI connection"
+  },
+  "aiProvider": {
+    "message": "Provider"
+  },
+  "aiProviderOpenAI": {
+    "message": "OpenAI"
+  },
+  "aiProviderAnthropic": {
+    "message": "Claude"
+  },
+  "aiProviderGemini": {
+    "message": "Gemini"
+  },
+  "aiProviderCustom": {
+    "message": "Custom"
+  },
+  "aiKeyLabel": {
+    "message": "API key"
+  },
+  "aiKeyPlaceholder": {
+    "message": "Paste your key"
+  },
+  "aiModelLabel": {
+    "message": "Model"
+  },
+  "aiBaseLabel": {
+    "message": "Base URL"
+  },
+  "aiTest": {
+    "message": "Test connection"
+  },
+  "aiTestOk": {
+    "message": "Connected."
+  },
+  "aiKeyNote": {
+    "message": "Your key is stored only in this browser and is sent only to the provider you choose."
+  },
+  "tipTranslate": {
+    "message": "Translate"
+  },
+  "trFree": {
+    "message": "Tries Chrome's on-device engine first (free, private, works offline). Falls back to online translation, then to your AI key."
+  },
+  "trDownloading": {
+    "message": "Downloading language pack"
+  },
+  "trSame": {
+    "message": "Already in that language."
+  },
+  "trRetry": {
+    "message": "Click the language once more to start the download."
+  },
+  "trFallback": {
+    "message": "Translating with your AI key…"
+  },
+  "libExport": {
+    "message": "Download all"
+  },
+  "optDim": {
+    "message": "Dim the page behind"
+  },
+  "optDimHint": {
+    "message": "Off, so you can keep reading the page while the panel is open."
+  },
+  "trWebLabel": {
+    "message": "Use online translation as backup"
+  },
+  "trWebHint": {
+    "message": "Free and keyless, but it goes through Google's public translate endpoint, which is unofficial."
+  },
+  "trViaChrome": {
+    "message": "Translated on your device."
+  },
+  "trViaWeb": {
+    "message": "Translated online."
+  },
+  "winLimit": {
+    "message": "Closed the oldest window to make room."
+  },
+  "settingsPanel": {
+    "message": "Panel"
+  },
+  "cmdTranslate": {
+    "message": "Translate the selection into your default language"
+  },
+  "menuTranslate": {
+    "message": "Translate with Focus Reader"
+  },
+  "trShortcut": {
+    "message": "Translate shortcut"
+  },
+  "tipPin": {
+    "message": "Keep this window on the next page"
+  },
+  "tipUnpin": {
+    "message": "Stop keeping this window"
+  },
+  "tipSide": {
+    "message": "Open in side panel"
+  },
+  "pinOn": {
+    "message": "This window will follow you to the next page."
+  },
+  "pinOff": {
+    "message": "No longer following you."
+  },
+  "sideFailed": {
+    "message": "Open the side panel from the extension icon."
+  },
+  "openSide": {
+    "message": "Open side panel"
+  },
+  "settingsColour": {
+    "message": "Accent colour"
+  },
+  "colourBrand": {
+    "message": "Brand"
+  },
+  "colourMoss": {
+    "message": "Moss"
+  },
+  "colourRandom": {
+    "message": "Surprise me"
+  },
+  "trTargetLabel": {
+    "message": "Translate into"
+  },
+  "trOriginal": {
+    "message": "Original"
+  },
+  "trCached": {
+    "message": "Switched — already translated."
+  },
+  "trReclick": {
+    "message": "Click the active language again to translate it fresh."
+  },
+  "ttsWebLabel": {
+    "message": "Use an online voice when your system has none"
+  },
+  "ttsWebHint": {
+    "message": "Persian and many other languages have no voice installed on Windows. This fetches one, through the same unofficial Google endpoint."
+  },
+  "msgNoVoice": {
+    "message": "Your system has no voice for this language."
+  },
+  "sidePanelHint": {
+    "message": "Text you open in Focus Reader shows up here and stays while you browse."
+  },
+  "sideEmpty": {
+    "message": "Nothing here yet. Select text on a page and open it in Focus Reader."
+  },
+  "bubbleOpen": {
+    "message": "Open in a window"
+  }
+}

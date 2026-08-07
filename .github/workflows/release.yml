@@ -1,0 +1,127 @@
+name: Release
+
+# Builds the installable zip and publishes it as a release asset.
+#
+# Trigger it by pushing a tag:   git tag v1.8.0 && git push origin v1.8.0
+# Or run it by hand from the Actions tab (workflow_dispatch) to get the zip
+# as a build artifact without publishing a release.
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build and publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Read version from manifest
+        id: manifest
+        run: |
+          version=$(jq -r '.version' src/manifest.json)
+          if [ -z "$version" ] || [ "$version" = "null" ]; then
+            echo "::error::No version field in src/manifest.json"
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "Manifest version: $version"
+
+      - name: Check the tag matches the manifest
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          manifest="${{ steps.manifest.outputs.version }}"
+          if [ "$tag" != "$manifest" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match manifest version $manifest. Fix src/manifest.json, or delete and re-push the tag."
+            exit 1
+          fi
+          echo "Tag and manifest agree on $manifest"
+
+      - name: Sanity-check the extension
+        run: |
+          fail=0
+          # manifest must be valid JSON and Manifest V3
+          jq -e '.manifest_version == 3' src/manifest.json > /dev/null \
+            || { echo "::error::src/manifest.json is not Manifest V3"; fail=1; }
+          # every locale file must be valid JSON
+          for f in src/_locales/*/messages.json; do
+            jq -e . "$f" > /dev/null || { echo "::error::Invalid JSON: $f"; fail=1; }
+          done
+          # required files
+          for f in src/manifest.json src/background.js src/content.js \
+                   src/icons/icon16.png src/icons/icon32.png \
+                   src/icons/icon48.png src/icons/icon128.png; do
+            [ -f "$f" ] || { echo "::error::Missing file: $f"; fail=1; }
+          done
+          # the font licence must travel with the font
+          [ -f src/fonts/VAZIRMATN-OFL.txt ] || \
+            { echo "::error::Missing src/fonts/VAZIRMATN-OFL.txt — the bundled font must ship with its licence"; fail=1; }
+          exit $fail
+
+      - name: Build the zip
+        id: build
+        run: |
+          version="${{ steps.manifest.outputs.version }}"
+          name="focus-reader-v${version}.zip"
+          mkdir -p dist
+          # Chrome needs manifest.json at the root of the archive,
+          # so we zip the *contents* of src/, not the folder itself.
+          # LICENSE and the trademark notice travel with the binary, as the GPL requires.
+          cp LICENSE TRADEMARK.md PRIVACY.md src/
+          ( cd src && zip -q -r -X "../dist/${name}" . -x '.*' -x '__MACOSX/*' )
+          rm src/LICENSE src/TRADEMARK.md src/PRIVACY.md
+          echo "name=$name" >> "$GITHUB_OUTPUT"
+          echo "path=dist/$name" >> "$GITHUB_OUTPUT"
+          unzip -l "dist/${name}"
+
+      - name: Upload as a build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: focus-reader-v${{ steps.manifest.outputs.version }}
+          path: ${{ steps.build.outputs.path }}
+          if-no-files-found: error
+
+      - name: Extract this version's notes from the changelog
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          version="${{ steps.manifest.outputs.version }}"
+          awk -v v="$version" '
+            $0 ~ "^## \\[" v "\\]" { on = 1; next }
+            on && /^## / { exit }
+            on { print }
+          ' CHANGELOG.md > notes.md
+          if [ ! -s notes.md ]; then
+            echo "No changelog entry found for $version." > notes.md
+          fi
+          {
+            echo ""
+            echo "---"
+            echo ""
+            echo "**Install:** download \`${{ steps.build.outputs.name }}\`, unzip it somewhere permanent, open \`chrome://extensions\`, turn on Developer mode, and use **Load unpacked** on the unzipped folder."
+            echo ""
+            echo "**نصب:** پرونده‌ی \`${{ steps.build.outputs.name }}\` را دریافت کنید، جایی که جابه‌جا نمی‌شود از حالت فشرده خارج کنید، به \`chrome://extensions\` بروید، Developer mode را روشن کنید و با **Load unpacked** پوشه را انتخاب کنید."
+            echo ""
+            echo "This project is not actively maintained — see the README before filing an issue."
+            echo ""
+            echo "این پروژه فعالانه پشتیبانی نمی‌شود — پیش از ثبت مشکل، README را بخوانید."
+          } >> notes.md
+
+      - name: Publish the release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            "${{ steps.build.outputs.path }}" \
+            --title "Focus Reader ${GITHUB_REF_NAME}" \
+            --notes-file notes.md \
+            --repo "$GITHUB_REPOSITORY"

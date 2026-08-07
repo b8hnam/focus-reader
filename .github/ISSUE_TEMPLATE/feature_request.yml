@@ -1,0 +1,50 @@
+name: Feature idea / پیشنهاد قابلیت
+description: Suggest something — with realistic expectations. / پیشنهاد بدهید، با انتظار واقع‌بینانه.
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please read.** This project has no roadmap and is not actively maintained. Ideas are welcome as a record for anyone who forks the project, but the realistic expectation is that an idea will not be built unless the author happens to want it too.
+
+        **لطفاً بخوانید.** این پروژه نقشه‌ی راه ندارد و فعالانه پشتیبانی نمی‌شود. پیشنهادها پذیرفته می‌شوند تا برای کسانی که انشعاب می‌گیرند ثبت بمانند، اما انتظار واقع‌بینانه این است که پیشنهاد ساخته نشود مگر اینکه نویسنده هم اتفاقاً همان را بخواهد.
+
+        A pull request has a far better chance than a request. / یک درخواست ادغام شانس خیلی بیشتری از یک درخواست ساده دارد.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you start / پیش از شروع
+      options:
+        - label: I understand this may never be built. / می‌دانم که ممکن است هرگز ساخته نشود.
+          required: true
+        - label: I searched existing issues. / مشکل‌ها و پیشنهادهای ثبت‌شده را جست‌وجو کردم.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem / مسئله
+      description: What are you trying to do that the extension makes hard today? / می‌خواهید چه کاری بکنید که افزونه امروز سختش می‌کند؟
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea / پیشنهاد
+      description: What would it look like inside the panel or the settings? / در پنجره یا تنظیمات چه شکلی می‌شود؟
+    validations:
+      required: true
+
+  - type: dropdown
+    id: offer
+    attributes:
+      label: Would you build it? / خودتان می‌سازیدش؟
+      options:
+        - I would send a pull request / درخواست ادغام می‌فرستم
+        - I could help test it / می‌توانم در آزمودنش کمک کنم
+        - No, just suggesting / نه، فقط پیشنهاد است
+    validations:
+      required: true

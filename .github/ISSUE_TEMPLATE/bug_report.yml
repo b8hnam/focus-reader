@@ -1,0 +1,103 @@
+name: Bug report / گزارش مشکل
+description: Something is broken. / چیزی درست کار نمی‌کند.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This project is not actively maintained.** Your report will be read, but there is no promise that it will be fixed, and no response time. If you need it fixed, a pull request is far more likely to get there — or fork the project.
+
+        **این پروژه فعالانه پشتیبانی نمی‌شود.** گزارش شما خوانده می‌شود، اما هیچ قولی برای رفع آن و هیچ زمان پاسخ‌گویی مشخصی وجود ندارد. اگر رفعش برایتان مهم است، فرستادن درخواست ادغام (Pull Request) شانس خیلی بیشتری دارد — یا از پروژه انشعاب بگیرید.
+
+        You can write in English or Persian. / می‌توانید انگلیسی یا فارسی بنویسید.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you start / پیش از شروع
+      options:
+        - label: I read the project-status note in the README. / یادداشت وضعیت پروژه را در README خواندم.
+          required: true
+        - label: I searched existing issues, open and closed. / مشکل‌های ثبت‌شده را، باز و بسته، جست‌وجو کردم.
+          required: true
+        - label: I checked that the problem still happens with all other extensions disabled. / بررسی کردم که با خاموش‌بودن بقیه‌ی افزونه‌ها هم مشکل تکرار می‌شود.
+          required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened / چه اتفاقی افتاد
+      description: What you expected, and what you got instead. / انتظار داشتید چه شود و در عمل چه شد.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / مراحل بازتولید
+      placeholder: |
+        1. Go to …
+        2. Select …
+        3. Press …
+        4. See …
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Page address / نشانی صفحه
+      description: A public page where it happens, if the problem is site-specific. / اگر مشکل به یک سایت خاص مربوط است، نشانی یک صفحه‌ی عمومی که در آن رخ می‌دهد.
+
+  - type: input
+    id: version
+    attributes:
+      label: Extension version / نسخه‌ی افزونه
+      description: From `chrome://extensions`. / از صفحه‌ی chrome://extensions.
+      placeholder: "1.8.0"
+    validations:
+      required: true
+
+  - type: input
+    id: chrome
+    attributes:
+      label: Browser and version / مرورگر و نسخه‌اش
+      description: From `chrome://version`. Include the operating system. / از صفحه‌ی chrome://version. سیستم‌عامل را هم بنویسید.
+      placeholder: "Chrome 138.0.7204.93 — Windows 11"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part / کدام بخش
+      options:
+        - Opening the panel / باز شدن پنجره
+        - Windows, dock, dragging / پنجره‌ها، جایگاه و جابه‌جایی
+        - Text or formatting / متن و قالب‌بندی
+        - Translation / ترجمه
+        - AI actions / ابزارهای هوش مصنوعی
+        - Saved texts / متن‌های ذخیره‌شده
+        - Read aloud / خواندن با صدای بلند
+        - Settings, shortcuts / تنظیمات و میانبرها
+        - Side panel / پنل کناری
+        - Performance / کارایی
+        - Persian, right-to-left, translation of the interface / فارسی، راست‌چین و ترجمه‌ی رابط
+        - Something else / چیز دیگری
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors / خطاهای کنسول
+      description: |
+        Open DevTools (`F12`) → Console on the page, and check the service worker log too at `chrome://extensions` → Focus Reader → *service worker*. Paste anything in red.
+        در صفحه ابزار توسعه‌دهنده را با `F12` باز کنید و سراغ Console بروید، و لاگ کارگر پس‌زمینه را هم از `chrome://extensions` ← Focus Reader ← service worker ببینید. هرچه قرمز بود اینجا بگذارید.
+      render: text
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or anything else / تصویر یا توضیح دیگر

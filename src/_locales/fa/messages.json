@@ -1,0 +1,404 @@
+{
+  "extName": {
+    "message": "Focus Reader — خوان تمرکز"
+  },
+  "extShortName": {
+    "message": "Focus Reader"
+  },
+  "extDesc": {
+    "message": "متن انتخاب‌شده را در یک پنجره‌ی خوانا باز می‌کند — راست‌چین و چپ‌چین، حالت شب، ویرایش، ابزارهای هوش مصنوعی و ذخیره‌ی متن‌ها."
+  },
+  "actionTitle": {
+    "message": "Focus Reader — تنظیمات"
+  },
+  "menuShow": {
+    "message": "باز کردن در Focus Reader"
+  },
+  "cmdShow": {
+    "message": "باز کردن متن انتخاب‌شده در Focus Reader"
+  },
+  "settingsHow": {
+    "message": "روش باز کردن پنجره"
+  },
+  "trgButton": {
+    "message": "دکمه کنار متن"
+  },
+  "trgButtonHint": {
+    "message": "بعد از انتخاب متن، یک دکمه‌ی کوچک ظاهر می‌شود."
+  },
+  "trgKey": {
+    "message": "کلید میانبر"
+  },
+  "trgMenu": {
+    "message": "منوی کلیک راست"
+  },
+  "trgMenuHint": {
+    "message": "گزینه‌ی «باز کردن در Focus Reader»"
+  },
+  "changeShortcut": {
+    "message": "تعیین کلید میانبر"
+  },
+  "shortcutNow": {
+    "message": "اکنون"
+  },
+  "settingsLook": {
+    "message": "شیوه‌ی نمایش"
+  },
+  "theme": {
+    "message": "پوسته"
+  },
+  "themeLight": {
+    "message": "روز"
+  },
+  "themeDark": {
+    "message": "شب"
+  },
+  "themeSystem": {
+    "message": "دستگاه"
+  },
+  "fontLabel": {
+    "message": "قلم"
+  },
+  "fontVazir": {
+    "message": "وزیرمتن"
+  },
+  "fontSans": {
+    "message": "بی‌سریف"
+  },
+  "fontSerif": {
+    "message": "سریف"
+  },
+  "fontMono": {
+    "message": "تک‌عرض"
+  },
+  "lineHeight": {
+    "message": "فاصله‌ی خطوط"
+  },
+  "lineTight": {
+    "message": "کم"
+  },
+  "lineNormal": {
+    "message": "متوسط"
+  },
+  "lineLoose": {
+    "message": "زیاد"
+  },
+  "readPage": {
+    "message": "خواندن کل صفحه"
+  },
+  "openLibrary": {
+    "message": "متن‌های ذخیره‌شده"
+  },
+  "pageUnavailable": {
+    "message": "روی این صفحه امکان اجرا نیست."
+  },
+  "tipCopy": {
+    "message": "کپی"
+  },
+  "tipSave": {
+    "message": "ذخیره‌ی متن"
+  },
+  "tipLibrary": {
+    "message": "متن‌های ذخیره‌شده"
+  },
+  "tipReader": {
+    "message": "بازگشت به متن"
+  },
+  "tipDownload": {
+    "message": "دریافت به شکل پرونده‌ی متنی"
+  },
+  "tipSpeak": {
+    "message": "خواندن با صدا"
+  },
+  "tipStop": {
+    "message": "توقف خواندن"
+  },
+  "tipClean": {
+    "message": "اصلاح و مرتب‌سازی متن"
+  },
+  "tipDirection": {
+    "message": "تغییر جهت متن"
+  },
+  "tipSmaller": {
+    "message": "قلم کوچک‌تر"
+  },
+  "tipBigger": {
+    "message": "قلم بزرگ‌تر"
+  },
+  "tipTheme": {
+    "message": "پوسته"
+  },
+  "tipEdit": {
+    "message": "ویرایش"
+  },
+  "tipEditDone": {
+    "message": "پایان ویرایش"
+  },
+  "tipAI": {
+    "message": "ابزارهای هوش مصنوعی"
+  },
+  "tipBold": {
+    "message": "پررنگ"
+  },
+  "tipItalic": {
+    "message": "مورب"
+  },
+  "tipUnderline": {
+    "message": "زیرخط"
+  },
+  "tipUndo": {
+    "message": "برگرداندن"
+  },
+  "tipReset": {
+    "message": "بازگرداندن متن اولیه"
+  },
+  "tipMinimize": {
+    "message": "کوچک کردن"
+  },
+  "tipMaximize": {
+    "message": "تمام صفحه"
+  },
+  "tipRestore": {
+    "message": "بازگشت به اندازه‌ی قبل"
+  },
+  "tipClose": {
+    "message": "بستن"
+  },
+  "tipOpenItem": {
+    "message": "باز کردن"
+  },
+  "tipDeleteItem": {
+    "message": "حذف"
+  },
+  "msgCopied": {
+    "message": "متن کپی شد."
+  },
+  "msgCopyFailed": {
+    "message": "کپی انجام نشد؛ متن را دستی انتخاب و کپی کنید."
+  },
+  "msgSaved": {
+    "message": "ذخیره شد."
+  },
+  "msgCleaned": {
+    "message": "متن مرتب شد."
+  },
+  "msgNoChange": {
+    "message": "چیزی برای اصلاح نبود."
+  },
+  "msgNoSelection": {
+    "message": "اول بخشی از متن صفحه را انتخاب کنید."
+  },
+  "msgNoArticle": {
+    "message": "متن قابل خواندنی در این صفحه پیدا نشد."
+  },
+  "msgDeleted": {
+    "message": "حذف شد."
+  },
+  "msgDownloaded": {
+    "message": "پرونده ذخیره شد."
+  },
+  "libraryTitle": {
+    "message": "متن‌های ذخیره‌شده"
+  },
+  "libraryEmpty": {
+    "message": "هنوز چیزی ذخیره نشده. با دکمه‌ی نشان‌گذاری متن را اینجا نگه دارید."
+  },
+  "libraryClear": {
+    "message": "حذف همه"
+  },
+  "statWords": {
+    "message": "واژه"
+  },
+  "statChars": {
+    "message": "نویسه"
+  },
+  "aiSummarize": {
+    "message": "خلاصه کن"
+  },
+  "aiKeyPoints": {
+    "message": "نکته‌های کلیدی"
+  },
+  "aiSimplify": {
+    "message": "ساده بگو"
+  },
+  "aiProofread": {
+    "message": "اصلاح نگارش"
+  },
+  "aiAsk": {
+    "message": "هر چیزی درباره‌ی این متن بپرس…"
+  },
+  "aiRun": {
+    "message": "اجرا"
+  },
+  "aiWorking": {
+    "message": "در حال انجام…"
+  },
+  "aiSettingsLink": {
+    "message": "تنظیمات هوش مصنوعی"
+  },
+  "aiNotSet": {
+    "message": "اول در تنظیمات افزونه کلید را وارد کنید."
+  },
+  "aiFailed": {
+    "message": "درخواست ناموفق بود"
+  },
+  "aiDone": {
+    "message": "انجام شد — با دکمه‌ی بازگردانی متن اولیه برمی‌گردد."
+  },
+  "settingsAI": {
+    "message": "اتصال هوش مصنوعی"
+  },
+  "aiProvider": {
+    "message": "سرویس"
+  },
+  "aiProviderOpenAI": {
+    "message": "OpenAI"
+  },
+  "aiProviderAnthropic": {
+    "message": "Claude"
+  },
+  "aiProviderGemini": {
+    "message": "Gemini"
+  },
+  "aiProviderCustom": {
+    "message": "دلخواه"
+  },
+  "aiKeyLabel": {
+    "message": "کلید"
+  },
+  "aiKeyPlaceholder": {
+    "message": "کلید را اینجا بگذارید"
+  },
+  "aiModelLabel": {
+    "message": "مدل"
+  },
+  "aiBaseLabel": {
+    "message": "نشانی سرویس"
+  },
+  "aiTest": {
+    "message": "آزمایش اتصال"
+  },
+  "aiTestOk": {
+    "message": "اتصال برقرار شد."
+  },
+  "aiKeyNote": {
+    "message": "کلید فقط در همین مرورگر ذخیره می‌شود و فقط به سرویسی که خودتان انتخاب کرده‌اید فرستاده می‌شود."
+  },
+  "tipTranslate": {
+    "message": "ترجمه"
+  },
+  "trFree": {
+    "message": "اول موتور روی‌دستگاه کروم را امتحان می‌کند (رایگان، خصوصی، بدون اینترنت). بعد ترجمه‌ی اینترنتی، و در آخر کلید هوش مصنوعی شما."
+  },
+  "trDownloading": {
+    "message": "در حال دریافت بسته‌ی زبان"
+  },
+  "trSame": {
+    "message": "متن همین حالا به این زبان است."
+  },
+  "trRetry": {
+    "message": "یک بار دیگر روی زبان بزنید تا دریافت شروع شود."
+  },
+  "trFallback": {
+    "message": "ترجمه با کلید هوش مصنوعی شما…"
+  },
+  "libExport": {
+    "message": "دریافت همه"
+  },
+  "optDim": {
+    "message": "تیره کردن پس‌زمینه"
+  },
+  "optDimHint": {
+    "message": "خاموش است تا هم‌زمان با باز بودن پنجره بشود صفحه را هم خواند."
+  },
+  "trWebLabel": {
+    "message": "ترجمه‌ی اینترنتی به‌عنوان پشتیبان"
+  },
+  "trWebHint": {
+    "message": "رایگان و بدون کلید، ولی از نشانی عمومی ترجمه‌ی گوگل رد می‌شود که رسمی نیست."
+  },
+  "trViaChrome": {
+    "message": "روی دستگاه خودتان ترجمه شد."
+  },
+  "trViaWeb": {
+    "message": "به‌صورت اینترنتی ترجمه شد."
+  },
+  "winLimit": {
+    "message": "قدیمی‌ترین پنجره برای باز شدن جا بسته شد."
+  },
+  "settingsPanel": {
+    "message": "پنجره"
+  },
+  "cmdTranslate": {
+    "message": "ترجمه‌ی متن انتخاب‌شده به زبان پیش‌فرض"
+  },
+  "menuTranslate": {
+    "message": "ترجمه با Focus Reader"
+  },
+  "trShortcut": {
+    "message": "میانبر ترجمه"
+  },
+  "tipPin": {
+    "message": "نگه داشتن این پنجره در صفحه‌ی بعد"
+  },
+  "tipUnpin": {
+    "message": "دیگر نگه ندار"
+  },
+  "tipSide": {
+    "message": "باز کردن در پنل کناری"
+  },
+  "pinOn": {
+    "message": "این پنجره در صفحه‌ی بعد هم همراهتان می‌آید."
+  },
+  "pinOff": {
+    "message": "دیگر همراهتان نمی‌آید."
+  },
+  "sideFailed": {
+    "message": "پنل کناری را از روی آیکن افزونه باز کنید."
+  },
+  "openSide": {
+    "message": "باز کردن پنل کناری"
+  },
+  "settingsColour": {
+    "message": "رنگ تأکیدی"
+  },
+  "colourBrand": {
+    "message": "برند"
+  },
+  "colourMoss": {
+    "message": "خزه‌ای"
+  },
+  "colourRandom": {
+    "message": "غافلگیرم کن"
+  },
+  "trTargetLabel": {
+    "message": "ترجمه به"
+  },
+  "trOriginal": {
+    "message": "متن اصلی"
+  },
+  "trCached": {
+    "message": "جابه‌جا شد — از قبل ترجمه شده بود."
+  },
+  "trReclick": {
+    "message": "برای ترجمه‌ی دوباره، روی زبان فعال دوباره بزنید."
+  },
+  "ttsWebLabel": {
+    "message": "صدای اینترنتی وقتی سیستم صدا ندارد"
+  },
+  "ttsWebHint": {
+    "message": "ویندوز برای فارسی و خیلی زبان‌های دیگر صدایی ندارد. این گزینه صدا را از همان نشانی غیررسمی گوگل می‌گیرد."
+  },
+  "msgNoVoice": {
+    "message": "سیستم شما برای این زبان صدایی ندارد."
+  },
+  "sidePanelHint": {
+    "message": "متنی که در Focus Reader باز کنید اینجا می‌آید و حین گشت‌وگذار می‌ماند."
+  },
+  "sideEmpty": {
+    "message": "هنوز چیزی اینجا نیست. متنی را در صفحه انتخاب و در Focus Reader باز کنید."
+  },
+  "bubbleOpen": {
+    "message": "باز کردن در پنجره"
+  }
+}
