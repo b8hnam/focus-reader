@@ -19,7 +19,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-/* Focus Reader — settings · byB8 · https://by.b8hnam.com/ */
+/* Focus Reader — settings · byB8 · https://by.b8hnam.com/focus-reader/ */
 
 const TRIGGERS = { trgButton: true, trgKey: true, trgMenu: true };
 const SEGMENTS = { theme: "system", fontFamily: "vazir", lineHeight: 2 };
@@ -43,8 +43,26 @@ for (const node of document.querySelectorAll("[data-i18n]")) {
 }
 document.getElementById("aiKey").placeholder = chrome.i18n.getMessage("aiKeyPlaceholder");
 
-/* the same page serves the toolbar popup and the full options tab */
-if (window.innerWidth > 460) document.body.classList.add("wide");
+/* The same page serves the toolbar popup and the full options tab, but they
+   are used differently. The popup sits on top of a page, so it leads with the
+   three actions; the options tab has no page to act on, so it drops them and
+   spreads the remaining sections over two columns of roughly equal height
+   instead of one tall one. */
+if (window.innerWidth > 460) {
+  document.body.classList.add("wide");
+  layoutOptions();
+}
+
+function layoutOptions() {
+  // "Dim the page behind" belongs with the panel settings once the actions go
+  document.getElementById("panelRows").prepend(document.getElementById("dimRow"));
+  document.getElementById("secActions").hidden = true;
+
+  const colA = document.getElementById("colA");
+  const colB = document.getElementById("colB");
+  colA.append(document.getElementById("secLook"), document.getElementById("secPanel"));
+  colB.append(document.getElementById("secAI"), document.getElementById("secHow"));
+}
 
 /* ---------- colours ---------- */
 

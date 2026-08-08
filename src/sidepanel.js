@@ -19,7 +19,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-/* Focus Reader — side panel · byB8 · https://by.b8hnam.com/
+/* Focus Reader — side panel · byB8 · https://by.b8hnam.com/focus-reader/
  * Stays put while you browse: the panel belongs to the tab, not the page. */
 
 const LOOK = { fontSize: 19, lineHeight: 2, fontFamily: "vazir", theme: "system", accent: "brand", trTarget: "fa", trWeb: true };

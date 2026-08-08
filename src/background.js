@@ -21,7 +21,7 @@
 
 /* ============================================================
  *  Focus Reader — background service worker
- *  byB8 · https://by.b8hnam.com/
+ *  byB8 · https://by.b8hnam.com/focus-reader/
  *  ============================================================ */
 
 const MENU_OPEN = "b8-open";

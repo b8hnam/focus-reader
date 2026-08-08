@@ -21,7 +21,7 @@
 
 /* ============================================================
  *  Focus Reader — colour system
- *  byB8 · https://by.b8hnam.com/
+ *  byB8 · https://by.b8hnam.com/focus-reader/
  *
  *  Brand: #411530 (deep plum) and #FF3000 (signal orange).
  *  Every surface is derived from one hue so a random accent

@@ -56,7 +56,7 @@ No servers of ours. No analytics. Your text never leaves your browser, and saved
 
 Interface available in English and Persian.
 
-byB8 — https://by.b8hnam.com/
+byB8 — https://by.b8hnam.com/focus-reader/
 
 ## Category
 Productivity

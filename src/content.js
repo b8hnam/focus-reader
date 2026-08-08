@@ -23,7 +23,7 @@
  *  Focus Reader
  *  Selected text, in windows that read well — RTL and LTR.
  *
- *  byB8 · https://by.b8hnam.com/
+ *  byB8 · https://by.b8hnam.com/focus-reader/
  *
  *  Performance contract: a handful of passive listeners and
  *  nothing else until the reader is opened. No DOM, no storage
@@ -52,7 +52,7 @@
 
   const store = {
     get(area, defs, cb) {
-      try { chrome.storage[area].get(defs, (v) => { if (!chrome.runtime.lastError) cb(v); }); } catch (e) { /* gone */ }
+      try { chrome.storage[area].get(defs, (v) => cb(chrome.runtime.lastError ? defs : v)); } catch (e) { cb(defs); }
     },
     set(area, obj) {
       try { chrome.storage[area].set(obj, () => void chrome.runtime.lastError); } catch (e) { /* gone */ }
@@ -90,10 +90,29 @@
     mono: '"Cascadia Mono", Consolas, "Courier New", monospace'
   };
 
-  const UI_DIR = chrome.i18n.getMessage("@@bidi_dir") || "ltr";
-  const UI_LANG = chrome.i18n.getUILanguage ? chrome.i18n.getUILanguage() : "en";
+  /* When the extension is reloaded, updated or removed, Chrome tears its
+     context away from pages that are already open while this script keeps
+     living in them. From that moment every chrome.* call throws
+     "Extension context invalidated" — including chrome.i18n, which is called
+     from async paths, so the throw surfaced as an unhandled rejection. Each
+     call now goes through a guard, and labels already fetched are kept so an
+     open window carries on reading well after the context is gone. */
+  const alive = () => { try { return !!(chrome.runtime && chrome.runtime.id); } catch (e) { return false; } };
+  const message = (key) => { try { return chrome.i18n.getMessage(key) || ""; } catch (e) { return ""; } };
+
+  const LABELS = Object.create(null);
+  const t = (key) => {
+    if (key in LABELS) return LABELS[key];
+    const text = message(key);
+    if (text) LABELS[key] = text;
+    return text || key;
+  };
+
+  const UI_DIR = message("@@bidi_dir") || "ltr";
+  const UI_LANG = (() => {
+    try { return chrome.i18n.getUILanguage ? chrome.i18n.getUILanguage() : "en"; } catch (e) { return "en"; }
+  })();
   const FA_DIGITS = UI_LANG.startsWith("fa");
-  const t = (key) => chrome.i18n.getMessage(key) || key;
 
   let darkQuery = null;
   const isDark = () => S.theme === "dark" || (S.theme === "system" && (darkQuery ? darkQuery.matches : false));
@@ -103,10 +122,12 @@
      extension, and strict site policies can block extension fonts outright. */
   let fontState = 0;
   function ensureFont() {
-    if (fontState || !window.FontFace || !document.fonts) return;
+    if (fontState || !window.FontFace || !document.fonts || !alive()) return;
     fontState = 1;
     for (const [weight, file] of [["400", "Vazirmatn-Regular.woff2"], ["700", "Vazirmatn-Bold.woff2"]]) {
-      fetch(chrome.runtime.getURL("fonts/" + file))
+      let url = "";
+      try { url = chrome.runtime.getURL("fonts/" + file); } catch (e) { return; }
+      fetch(url)
         .then((r) => r.arrayBuffer())
         .then((buffer) => {
           const face = new FontFace("B8 Vazirmatn", buffer, { weight, style: "normal", display: "swap" });
@@ -533,7 +554,7 @@
     }, true);
 
     if (IS_TOP) {
-      console.log("%c Focus Reader %c byB8 · by.b8hnam.com ",
+      console.log("%c Focus Reader %c byB8 · by.b8hnam.com/focus-reader ",
         "background:#411530;color:#fff;border-radius:4px 0 0 4px;padding:2px 7px",
         "background:#ff3000;color:#fff;border-radius:0 4px 4px 0;padding:2px 7px");
     }
@@ -641,7 +662,7 @@
         <span class="count"></span>
         <span class="toast"></span>
         <span class="grow"></span>
-        <a class="sig" href="https://by.b8hnam.com/" target="_blank" rel="noopener noreferrer">byB8</a>
+        <a class="sig" href="https://by.b8hnam.com/focus-reader/" target="_blank" rel="noopener noreferrer">byB8</a>
       </div>`;
 
     const w = {

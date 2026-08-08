@@ -11,41 +11,33 @@
       <span class="mark" aria-hidden="true"></span>
       <div>
         <h1>Focus Reader</h1>
-        <a class="by" href="https://by.b8hnam.com/" target="_blank" rel="noopener noreferrer">byB8</a>
+        <a class="by" href="https://by.b8hnam.com/focus-reader/" target="_blank" rel="noopener noreferrer">byB8</a>
       </div>
     </header>
 
+    <!-- Source order is the toolbar popup's order. The options tab regroups
+         these sections into two columns in popup.js — see layoutOptions(). -->
     <div class="cols">
-      <div class="col">
-        <section>
-          <h2 data-i18n="settingsHow"></h2>
-          <ul class="rows">
-            <li>
-              <label for="trgButton">
-                <span class="name" data-i18n="trgButton"></span>
-                <span class="hint" data-i18n="trgButtonHint"></span>
+      <div class="col" id="colA">
+        <section id="secActions">
+          <div class="actions">
+            <button type="button" id="readPage" class="wide" data-i18n="readPage"></button>
+            <button type="button" id="openLibrary" class="wide" data-i18n="openLibrary"></button>
+            <button type="button" id="openSide" class="wide" data-i18n="openSide"></button>
+          </div>
+          <p class="note" id="note" hidden></p>
+          <ul class="rows" id="dimRows">
+            <li id="dimRow">
+              <label for="dimPage">
+                <span class="name" data-i18n="optDim"></span>
+                <span class="hint" data-i18n="optDimHint"></span>
               </label>
-              <input type="checkbox" id="trgButton" class="switch">
-            </li>
-            <li>
-              <label for="trgKey">
-                <span class="name" data-i18n="trgKey"></span>
-                <span class="hint" id="keyHint"></span>
-              </label>
-              <input type="checkbox" id="trgKey" class="switch">
-            </li>
-            <li>
-              <label for="trgMenu">
-                <span class="name" data-i18n="trgMenu"></span>
-                <span class="hint" data-i18n="trgMenuHint"></span>
-              </label>
-              <input type="checkbox" id="trgMenu" class="switch">
+              <input type="checkbox" id="dimPage" class="switch">
             </li>
           </ul>
-          <button type="button" id="shortcut" class="ghost" data-i18n="changeShortcut"></button>
         </section>
 
-        <section>
+        <section id="secLook">
           <h2 data-i18n="settingsLook"></h2>
 
           <div class="field">
@@ -85,23 +77,14 @@
             </div>
           </div>
         </section>
-      </div>
 
-      <div class="col">
-        <section>
+        <section id="secPanel">
           <h2 data-i18n="settingsPanel"></h2>
           <div class="field">
             <span class="label" data-i18n="trTargetLabel"></span>
             <select id="trTarget" class="text"></select>
           </div>
-          <ul class="rows">
-            <li>
-              <label for="dimPage">
-                <span class="name" data-i18n="optDim"></span>
-                <span class="hint" data-i18n="optDimHint"></span>
-              </label>
-              <input type="checkbox" id="dimPage" class="switch">
-            </li>
+          <ul class="rows" id="panelRows">
             <li>
               <label for="trWeb">
                 <span class="name" data-i18n="trWebLabel"></span>
@@ -119,7 +102,7 @@
           </ul>
         </section>
 
-        <section>
+        <section id="secAI">
           <h2 data-i18n="settingsAI"></h2>
 
           <div class="field">
@@ -149,13 +132,36 @@
           <p class="note" id="aiNote" data-i18n="aiKeyNote"></p>
         </section>
 
-        <div class="actions">
-          <button type="button" id="readPage" class="wide" data-i18n="readPage"></button>
-          <button type="button" id="openLibrary" class="wide" data-i18n="openLibrary"></button>
-          <button type="button" id="openSide" class="wide" data-i18n="openSide"></button>
-        </div>
-        <p class="note" id="note" hidden></p>
+        <section id="secHow">
+          <h2 data-i18n="settingsHow"></h2>
+          <ul class="rows">
+            <li>
+              <label for="trgButton">
+                <span class="name" data-i18n="trgButton"></span>
+                <span class="hint" data-i18n="trgButtonHint"></span>
+              </label>
+              <input type="checkbox" id="trgButton" class="switch">
+            </li>
+            <li>
+              <label for="trgKey">
+                <span class="name" data-i18n="trgKey"></span>
+                <span class="hint" id="keyHint"></span>
+              </label>
+              <input type="checkbox" id="trgKey" class="switch">
+            </li>
+            <li>
+              <label for="trgMenu">
+                <span class="name" data-i18n="trgMenu"></span>
+                <span class="hint" data-i18n="trgMenuHint"></span>
+              </label>
+              <input type="checkbox" id="trgMenu" class="switch">
+            </li>
+          </ul>
+          <button type="button" id="shortcut" class="ghost" data-i18n="changeShortcut"></button>
+        </section>
       </div>
+
+      <div class="col" id="colB"></div>
     </div>
   </div>
 

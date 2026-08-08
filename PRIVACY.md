@@ -34,4 +34,4 @@ Focus Reader does not collect, transmit, or sell any data. Nothing leaves your b
 
 ## Contact
 
-byB8 — https://by.b8hnam.com/
+byB8 — https://by.b8hnam.com/focus-reader/

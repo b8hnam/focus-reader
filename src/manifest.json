@@ -2,11 +2,11 @@
   "manifest_version": 3,
   "name": "__MSG_extName__",
   "short_name": "__MSG_extShortName__",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
   "author": "B8hnam",
-  "homepage_url": "https://by.b8hnam.com/",
+  "homepage_url": "https://by.b8hnam.com/focus-reader/",
   "minimum_chrome_version": "116",
 
   "permissions": ["contextMenus", "storage", "scripting", "activeTab", "sidePanel"],

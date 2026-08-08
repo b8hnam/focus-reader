@@ -10,6 +10,19 @@ This is a personal project, updated when there's time for it — see the README 
 
 Nothing yet.
 
+## [1.9.1] — 2026-08-08
+
+### Changed
+
+- **Toolbar popup order** — the three actions (*Read this page*, *Saved texts*, *Open side panel*) now sit at the top of the popup instead of the bottom, with *Dim the page behind* directly beneath them, and the three "how to open the panel" switches — set once and rarely touched again — moved to the end. The controls themselves are unchanged.
+- **Extension website** — the `byB8` signature in the popup, the side panel and the reader window, along with `homepage_url` in the manifest and the address in the privacy notice and store listing, now point at `https://by.b8hnam.com/focus-reader/` rather than the site root. The author and brand links in the README and `TRADEMARK.md` still point at the root, which is where they belong.
+- **Options page** — the three actions are hidden here. They act on the page underneath the popup, and the options tab has no page underneath it, so they had nothing to do; *Dim the page behind* returns to the panel settings where it started. The remaining four sections are split across the two columns by height (reading style and panel on one side, AI connection and how-to-open on the other) rather than one short column beside one very long one, which roughly halves the height of the page.
+
+### Fixed
+
+- Options page: the accent wash stopped where the content stopped, leaving a hard horizontal edge across the lower half of the window. The wash moved from `<body>` to `<html>` with fixed attachment, so it covers the whole window as one even gradient at any height, and the sheet is now centred on both axes instead of sitting against the top.
+- Content script: `Uncaught (in promise) Error: Extension context invalidated`. Reloading, updating or removing the extension detaches its context from pages that are already open, while the content script keeps running in them; every later `chrome.*` call then throws. `chrome.i18n` is reached from async paths, so the throw surfaced as an unhandled rejection. All `chrome.i18n` and `chrome.runtime.getURL` calls are now guarded, labels already fetched are cached so open windows keep their wording, and a settings read that can't reach storage falls back to the defaults instead of leaving the panel waiting.
+
 ## [1.9.0] — 2026-08-07
 
 ### Added
@@ -52,6 +65,7 @@ First public release. Earlier versions were private builds used by the author an
 - The content script stays inert until first use — four passive listeners on page load and nothing else.
 - No servers, no analytics, no accounts. See `PRIVACY.md`.
 
-[Unreleased]: https://github.com/b8hnam/focus-reader/compare/v1.9.0...HEAD
+[Unreleased]: https://github.com/b8hnam/focus-reader/compare/v1.9.1...HEAD
+[1.9.1]: https://github.com/b8hnam/focus-reader/compare/v1.9.0...v1.9.1
 [1.9.0]: https://github.com/b8hnam/focus-reader/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/b8hnam/focus-reader/releases/tag/v1.8.0
