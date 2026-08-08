@@ -128,6 +128,17 @@ button.ghost:hover { color: var(--accent-text); border-color: var(--accent); }
 #note { text-align: center; }
 .note.ok { color: var(--accent-text); }
 
+/* Foot of the settings page — the same weight as a caption, never louder */
+.foot {
+  display: flex; align-items: center; gap: 7px; flex-wrap: wrap;
+  margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--edge);
+  font-size: 10.5px; color: var(--muted);
+}
+.foot a { color: var(--muted); text-decoration: none; }
+.foot a:hover { color: var(--accent-text); }
+.foot .dot { opacity: .5; }
+.foot .grow { flex: 1; }
+
 /* Scrollbar — themed to match the rest of the UI instead of the OS default */
 * { scrollbar-width: thin; scrollbar-color: var(--accent-soft) transparent; }
 ::-webkit-scrollbar { width: 9px; height: 9px; }

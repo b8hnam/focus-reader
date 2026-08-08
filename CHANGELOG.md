@@ -10,6 +10,16 @@ This is a personal project, updated when there's time for it — see the README 
 
 Nothing yet.
 
+## [1.9.3] — 2026-08-08
+
+### Added
+
+- **A quiet footer on the settings page** — source code, problem reports, privacy policy, and the version number, in caption-sized muted type as the last thing on the page. The version is read from the manifest, so it never needs updating by hand. Nothing here interrupts anyone: the reader window, which is where people are actually working, gains nothing at all.
+
+### Changed
+
+- **The byB8 signature points at the site root again** — in the reader window's footer and in the console badge. That signature is the author's mark, not a link to this product, so it belongs on the studio's front page. `homepage_url` in the manifest, the privacy notice and the store listing still point at `by.b8hnam.com/focus-reader/`, which is the extension's own page.
+
 ## [1.9.2] — 2026-08-08
 
 ### Fixed
@@ -74,7 +84,8 @@ First public release. Earlier versions were private builds used by the author an
 - The content script stays inert until first use — four passive listeners on page load and nothing else.
 - No servers, no analytics, no accounts. See `PRIVACY.md`.
 
-[Unreleased]: https://github.com/b8hnam/focus-reader/compare/v1.9.2...HEAD
+[Unreleased]: https://github.com/b8hnam/focus-reader/compare/v1.9.3...HEAD
+[1.9.3]: https://github.com/b8hnam/focus-reader/compare/v1.9.2...v1.9.3
 [1.9.2]: https://github.com/b8hnam/focus-reader/compare/v1.9.1...v1.9.2
 [1.9.1]: https://github.com/b8hnam/focus-reader/compare/v1.9.0...v1.9.1
 [1.9.0]: https://github.com/b8hnam/focus-reader/compare/v1.8.0...v1.9.0

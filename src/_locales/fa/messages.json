@@ -408,5 +408,21 @@
   },
   "bubbleOpen": {
     "message": "باز کردن در پنجره"
+  },
+  "footSource": {
+    "message": "کد پروژه",
+    "description": "Link at the foot of the settings page, to the GitHub repository"
+  },
+  "footIssue": {
+    "message": "گزارش مشکل",
+    "description": "Link at the foot of the settings page, to the issue tracker"
+  },
+  "footPrivacy": {
+    "message": "حریم خصوصی",
+    "description": "Link at the foot of the settings page, to the privacy policy"
+  },
+  "footVersion": {
+    "message": "نسخه",
+    "description": "Label before the version number at the foot of the settings page"
   }
 }

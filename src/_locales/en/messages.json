@@ -408,5 +408,21 @@
   },
   "bubbleOpen": {
     "message": "Open in a window"
+  },
+  "footSource": {
+    "message": "Source code",
+    "description": "Link at the foot of the settings page, to the GitHub repository"
+  },
+  "footIssue": {
+    "message": "Report a problem",
+    "description": "Link at the foot of the settings page, to the issue tracker"
+  },
+  "footPrivacy": {
+    "message": "Privacy",
+    "description": "Link at the foot of the settings page, to the privacy policy"
+  },
+  "footVersion": {
+    "message": "Version",
+    "description": "Label before the version number at the foot of the settings page"
   }
 }

@@ -6,13 +6,13 @@ A Chrome extension in plain JavaScript. No build step, no framework, no bundler,
 
 Built byB8 · [by.b8hnam.com](https://by.b8hnam.com/) · [فارسی](README.fa.md)
 
+[![Stars](https://img.shields.io/github/stars/b8hnam/focus-reader?style=flat&color=FF3000&labelColor=411530)](https://github.com/b8hnam/focus-reader/stargazers)
+[![Latest release](https://img.shields.io/github/v/release/b8hnam/focus-reader?style=flat&color=FF3000&labelColor=411530)](https://github.com/b8hnam/focus-reader/releases/latest)
+[![Licence](https://img.shields.io/badge/licence-GPL--3.0--or--later-FF3000?style=flat&labelColor=411530)](LICENSE)
+
 ![Focus Reader settings](docs/media/settings.png)
 
-
-
-https://github.com/user-attachments/assets/6bc6df6f-d568-4fe4-9884-042c517bf7b2
-
-
+<!-- VIDEO: drag final.mp4 into this line in GitHub's web editor, then delete this comment -->
 
 **In the video:** three ways to open the panel · multiple windows and the dock · translation in place · bring-your-own-key AI actions · saved texts · side panel · reading style
 
@@ -141,3 +141,11 @@ Read the project-status warning above first, then [CONTRIBUTING.md](CONTRIBUTING
 Copyright © 2026 Behnam Azimi (B8hnam).
 
 Vazirmatn by Saber Rastikerdar, SIL Open Font License 1.1 — see `src/fonts/VAZIRMATN-OFL.txt`. It is bundled unmodified and stays under its own licence, not the GPL.
+
+---
+
+## If it's useful to you
+
+Focus Reader has no server, no analytics, and no accounts — which is the point, but it also means there is no way of knowing whether anyone out there is using it. A [star on GitHub](https://github.com/b8hnam/focus-reader) is the only signal that reaches me, and it costs you one click.
+
+Nothing else is asked for. The extension is free, stays free, and will never show you this again.

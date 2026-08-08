@@ -64,6 +64,10 @@ function layoutOptions() {
   colB.append(document.getElementById("secAI"), document.getElementById("secHow"));
 }
 
+/* the version is read from the manifest so it never needs updating by hand */
+document.getElementById("footVersion").textContent =
+  `${chrome.i18n.getMessage("footVersion")} ${chrome.runtime.getManifest().version}`;
+
 /* ---------- colours ---------- */
 
 const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");

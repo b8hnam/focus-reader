@@ -8,17 +8,13 @@
 
 ساخته‌ی **B8hnam** · [by.b8hnam.com](https://by.b8hnam.com/) · [English](README.md)
 
+[![Stars](https://img.shields.io/github/stars/b8hnam/focus-reader?style=flat&color=FF3000&labelColor=411530)](https://github.com/b8hnam/focus-reader/stargazers)
+[![Latest release](https://img.shields.io/github/v/release/b8hnam/focus-reader?style=flat&color=FF3000&labelColor=411530)](https://github.com/b8hnam/focus-reader/releases/latest)
+[![Licence](https://img.shields.io/badge/licence-GPL--3.0--or--later-FF3000?style=flat&labelColor=411530)](LICENSE)
+
 ![Focus Reader settings](docs/media/settings.png)
 
-
-
-
-
-
-https://github.com/user-attachments/assets/797e61bd-945e-49c3-a3f2-b2ff4a473d1b
-
-
-
+<!-- ویدیو: فایل final.mp4 را در ویرایشگر وب گیت‌هاب روی همین خط رها کنید، بعد این توضیح را پاک کنید -->
 
 **در ویدیو:** سه روش باز کردن پنل · چند پنجره و جاگاه · ترجمه در جای متن · ابزارهای هوش مصنوعی با کلید خودتان · متن‌های ذخیره‌شده · پنل کناری · سبک خواندن
 
@@ -151,5 +147,13 @@ TRADEMARK.md          چیزهایی که پروانه شاملشان نمی‌�
 حق نشر © ۲۰۲۶ بهنام عظیمی (B8hnam).
 
 قلم وزیرمتن از صابر رستی‌کردار، با پروانه‌ی SIL Open Font License 1.1 — در `src/fonts/VAZIRMATN-OFL.txt`. بدون تغییر همراه افزونه است و زیر پروانه‌ی خودش می‌ماند، نه GPL.
+
+---
+
+## اگر به کارتان آمد
+
+Focus Reader سرور ندارد، تحلیل رفتار ندارد، حساب کاربری ندارد — که خودش هدف است، ولی یعنی هیچ راهی هم نیست بفهمم کسی از آن استفاده می‌کند یا نه. [یک ستاره در گیت‌هاب](https://github.com/b8hnam/focus-reader) تنها نشانه‌ای است که به من می‌رسد، و یک کلیک بیشتر وقت نمی‌گیرد.
+
+چیز دیگری خواسته نمی‌شود. این افزونه رایگان است، رایگان می‌ماند، و دیگر این را به شما نشان نمی‌دهد.
 
 </div>

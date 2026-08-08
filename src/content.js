@@ -554,7 +554,7 @@
     }, true);
 
     if (IS_TOP) {
-      console.log("%c Focus Reader %c byB8 · by.b8hnam.com/focus-reader ",
+      console.log("%c Focus Reader %c byB8 · by.b8hnam.com ",
         "background:#411530;color:#fff;border-radius:4px 0 0 4px;padding:2px 7px",
         "background:#ff3000;color:#fff;border-radius:0 4px 4px 0;padding:2px 7px");
     }
@@ -662,7 +662,7 @@
         <span class="count"></span>
         <span class="toast"></span>
         <span class="grow"></span>
-        <a class="sig" href="https://by.b8hnam.com/focus-reader/" target="_blank" rel="noopener noreferrer">byB8</a>
+        <a class="sig" href="https://by.b8hnam.com/" target="_blank" rel="noopener noreferrer">byB8</a>
       </div>`;
 
     const w = {
