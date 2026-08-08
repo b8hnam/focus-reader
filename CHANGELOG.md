@@ -4,7 +4,7 @@ All notable changes to Focus Reader are recorded here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html). The `version` field in `src/manifest.json` is the single source of truth; every release tag must match it.
 
-This project is not actively maintained — see the note in the README. Gaps between entries are expected and are not a sign that anything is wrong.
+This is a personal project, updated when there's time for it — see the README for how it's maintained. Gaps between entries are expected and are not a sign that anything is wrong.
 
 ## [Unreleased]
 

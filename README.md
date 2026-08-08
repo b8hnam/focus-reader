@@ -8,19 +8,17 @@ Built byB8 · [by.b8hnam.com](https://by.b8hnam.com/) · [فارسی](README.fa.
 
 ---
 
-## ⚠️ Project status: not actively maintained
+## About this project
 
-**Read this before you file an issue or depend on this code.**
+Focus Reader is a personal tool — built for the author's own use, and released because it might be useful to others too. There's no public roadmap and no support commitment. Updates happen when something in daily use needs fixing, when an idea is worth building, or simply when there's time for it — not on a schedule.
 
-Focus Reader was written for its author's own use and released because it may be useful to others. It is published *as is*:
+Practically, that means:
 
-- There is **no support**. Questions may go unanswered.
-- There is **no roadmap** and **no release schedule**. New versions appear only when the author happens to want a feature, or when something breaks badly enough to bother him.
-- Bug reports are welcome and will be read, but there is **no commitment to fix anything**, and no promised response time.
-- Pull requests are welcome and may sit unreviewed for a long time.
-- Breaking changes in Chrome may go unaddressed indefinitely.
+- Issues and pull requests are read, but there's no promised response time and no guarantee anything gets acted on.
+- New releases show up when they show up. There's no calendar behind them.
+- If Chrome changes something and it breaks the extension, it gets fixed when it gets fixed.
 
-If you need this maintained, **fork it** — that is exactly what the GPL is for.
+If you need something more predictable — guaranteed fixes, a roadmap, active review of contributions — the code is GPL-licensed specifically so you can fork it and run it your way.
 
 ---
 

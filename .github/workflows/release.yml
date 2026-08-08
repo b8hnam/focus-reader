@@ -110,9 +110,9 @@ jobs:
             echo ""
             echo "**نصب:** پرونده‌ی \`${{ steps.build.outputs.name }}\` را دریافت کنید، جایی که جابه‌جا نمی‌شود از حالت فشرده خارج کنید، به \`chrome://extensions\` بروید، Developer mode را روشن کنید و با **Load unpacked** پوشه را انتخاب کنید."
             echo ""
-            echo "This project is not actively maintained — see the README before filing an issue."
+            echo "This is a personal project, updated when there's time for it — see the README for how it's maintained."
             echo ""
-            echo "این پروژه فعالانه پشتیبانی نمی‌شود — پیش از ثبت مشکل، README را بخوانید."
+            echo "این یک پروژه‌ی شخصی است، هروقت وقتش برسد به‌روزرسانی می‌شود — نحوه‌ی نگهداری‌اش را در README بخوانید."
           } >> notes.md
 
       - name: Publish the release

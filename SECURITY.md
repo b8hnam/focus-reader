@@ -8,7 +8,7 @@ Please state what an attacker could actually do — read a page the user did not
 
 ## What to expect
 
-This project is not actively maintained. There is **no promised response time and no guaranteed fix**. A report will be read, and a genuine vulnerability will be acknowledged publicly here, but the honest expectation is that a fix may be slow or may not come at all. A pull request with a fix is the fastest path.
+This is a personal project without a support commitment — see the [README](https://github.com/b8hnam/focus-reader#about-this-project). There's no promised response time and no guarantee of a fix. A report will be read, and a genuine vulnerability will be acknowledged publicly here, but a fix may take a while or may not land at all. A pull request with a fix is the fastest path.
 
 Only the latest release is looked at. Older versions get nothing.
 

@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Read this first — the project is not actively maintained / اول این را بخوانید — پروژه فعالانه پشتیبانی نمی‌شود
-    url: https://github.com/byb8hnam/focus-reader#️-project-status-not-actively-maintained
-    about: No support, no roadmap, no promised fixes. Forks are encouraged. / بدون پشتیبانی، بدون نقشه‌ی راه، بدون تعهد به رفع مشکل. انشعاب گرفتن تشویق می‌شود.
+  - name: Read this first — how this project works / اول این را بخوانید — این پروژه چطور کار می‌کند
+    url: https://github.com/b8hnam/focus-reader#about-this-project
+    about: A personal tool, updated when there's time for it — not on a schedule. / یک ابزار شخصی، هروقت وقتش برسد به‌روزرسانی می‌شود — نه طبق برنامه‌ی زمانی.
   - name: Questions and general discussion / پرسش و گفت‌وگو
-    url: https://github.com/byb8hnam/focus-reader/discussions
+    url: https://github.com/b8hnam/focus-reader/discussions
     about: Usage questions belong here, not in the issue tracker. / پرسش‌های استفاده اینجا مطرح شوند، نه در بخش مشکل‌ها.
   - name: Security issue / مشکل امنیتی
-    url: https://github.com/byb8hnam/focus-reader/security/advisories/new
+    url: https://github.com/b8hnam/focus-reader/security/advisories/new
     about: Report privately, not as a public issue. / خصوصی گزارش دهید، نه به‌صورت مشکل عمومی.

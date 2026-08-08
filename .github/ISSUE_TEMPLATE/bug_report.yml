@@ -6,9 +6,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        **This project is not actively maintained.** Your report will be read, but there is no promise that it will be fixed, and no response time. If you need it fixed, a pull request is far more likely to get there — or fork the project.
+        This is a personal project without a support commitment — see the [README](https://github.com/b8hnam/focus-reader#about-this-project) for how it's maintained. Your report will be read, but there's no promised response time or guarantee of a fix. A pull request is the fastest path to getting something fixed.
 
-        **این پروژه فعالانه پشتیبانی نمی‌شود.** گزارش شما خوانده می‌شود، اما هیچ قولی برای رفع آن و هیچ زمان پاسخ‌گویی مشخصی وجود ندارد. اگر رفعش برایتان مهم است، فرستادن درخواست ادغام (Pull Request) شانس خیلی بیشتری دارد — یا از پروژه انشعاب بگیرید.
+        این یک پروژه‌ی شخصی است و تعهد پشتیبانی ندارد — نحوه‌ی نگهداری‌اش را در [README](https://github.com/b8hnam/focus-reader#about-this-project) بخوانید. گزارش شما خوانده می‌شود، اما زمان پاسخ‌گویی یا تضمینی برای رفع آن وجود ندارد. فرستادن درخواست ادغام (Pull Request) سریع‌ترین راه برای رفع مشکل است.
 
         You can write in English or Persian. / می‌توانید انگلیسی یا فارسی بنویسید.
 

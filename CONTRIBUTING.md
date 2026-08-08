@@ -4,7 +4,7 @@
 
 ## Before anything else
 
-This project is **not actively maintained**. It was written for its author's own use. Issues and pull requests are read, but nothing is promised: no response time, no fixes, no roadmap. If you need a maintained version, fork it — the GPL exists for exactly this.
+This is a personal project, built for the author's own use and released because it might help others. There's no support commitment and no promised response time on issues or pull requests. If you need a version with guaranteed maintenance, fork it — the GPL exists for exactly this.
 
 That said, contributions are genuinely welcome, and a good pull request is the fastest path from "this is broken" to "this is fixed".
 
@@ -64,7 +64,7 @@ A version mismatch between tag and manifest fails the build on purpose. To retry
 
 ### پیش از هر چیز
 
-این پروژه **فعالانه پشتیبانی نمی‌شود**. نویسنده‌اش آن را برای استفاده‌ی خودش نوشته است. مشکل‌ها و درخواست‌های ادغام خوانده می‌شوند، ولی هیچ قولی داده نمی‌شود: نه زمان پاسخ، نه رفع مشکل، نه نقشه‌ی راه. اگر به نسخه‌ی پشتیبانی‌شده نیاز دارید انشعاب بگیرید — پروانه دقیقاً برای همین است.
+این یک پروژه‌ی شخصی است، برای استفاده‌ی خودِ نویسنده ساخته شده و منتشر شده چون شاید به کار دیگران هم بیاید. تعهد پشتیبانی و زمان پاسخ‌گویی مشخصی برای مشکل‌ها و درخواست‌های ادغام وجود ندارد. اگر به نسخه‌ای با نگهداری تضمین‌شده نیاز دارید، انشعاب بگیرید — پروانه دقیقاً برای همین است.
 
 با این حال مشارکت واقعاً پذیرفته می‌شود، و یک درخواست ادغام خوب کوتاه‌ترین راه از «این خراب است» به «این درست شد» است.
 
