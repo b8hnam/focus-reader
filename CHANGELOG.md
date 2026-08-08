@@ -21,6 +21,8 @@ Nothing yet.
 
 ### Changed
 
+- **Brand name capitalisation** — the author name is written `B8hnam` everywhere it appears as a name: the copyright lines in the READMEs and in every source file header, and the trademark clause. Domain names and the GitHub handle stay lowercase, as they must.
+
 - **Toolbar popup order** — the three actions (*Read this page*, *Saved texts*, *Open side panel*) now sit at the top of the popup instead of the bottom, with *Dim the page behind* directly beneath them, and the three "how to open the panel" switches — set once and rarely touched again — moved to the end. The controls themselves are unchanged.
 - **Extension website** — the `byB8` signature in the popup, the side panel and the reader window, along with `homepage_url` in the manifest and the address in the privacy notice and store listing, now point at `https://by.b8hnam.com/focus-reader/` rather than the site root. The author and brand links in the README and `TRADEMARK.md` still point at the root, which is where they belong.
 - **Options page** — the three actions are hidden here. They act on the page underneath the popup, and the options tab has no page underneath it, so they had nothing to do; *Dim the page behind* returns to the panel settings where it started. The remaining four sections are split across the two columns by height (reading style and panel on one side, AI connection and how-to-open on the other) rather than one short column beside one very long one, which roughly halves the height of the page.

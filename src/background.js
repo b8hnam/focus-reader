@@ -1,5 +1,5 @@
 /*
- * Focus Reader — Copyright (C) 2026 Behnam Azimi (b8hnam)
+ * Focus Reader — Copyright (C) 2026 Behnam Azimi (B8hnam)
  *
  * This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -13,7 +13,7 @@
  * GNU General Public License along with this program. If not, see
  * <https://www.gnu.org/licenses/>.
  *
- * The name "Focus Reader", the byB8 and b8hnam names, and the logo and icon
+ * The name "Focus Reader", the byB8 and B8hnam names, and the logo and icon
  * files are NOT covered by this licence — see TRADEMARK.md.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later

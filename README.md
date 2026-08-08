@@ -132,8 +132,8 @@ Read the project-status warning above first, then [CONTRIBUTING.md](CONTRIBUTING
 
 ## Licence
 
-[GNU General Public License v3.0 or later](LICENSE) — with one additional term under GPLv3 section 7(e): **the name "Focus Reader", the byB8 and b8hnam names, and the logo and icon files are not licensed.** If you fork this, keep the code, change the name and the icons. See [TRADEMARK.md](TRADEMARK.md).
+[GNU General Public License v3.0 or later](LICENSE) — with one additional term under GPLv3 section 7(e): **the name "Focus Reader", the byB8 and B8hnam names, and the logo and icon files are not licensed.** If you fork this, keep the code, change the name and the icons. See [TRADEMARK.md](TRADEMARK.md).
 
-Copyright © 2026 Behnam Azimi (b8hnam).
+Copyright © 2026 Behnam Azimi (B8hnam).
 
 Vazirmatn by Saber Rastikerdar, SIL Open Font License 1.1 — see `src/fonts/VAZIRMATN-OFL.txt`. It is bundled unmodified and stays under its own licence, not the GPL.
