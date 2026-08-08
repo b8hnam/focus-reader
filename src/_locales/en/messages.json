@@ -197,6 +197,14 @@
   "msgDownloaded": {
     "message": "File saved."
   },
+  "msgStale": {
+    "message": "Focus Reader was updated — reload this page to use it again.",
+    "description": "Shown when the page still holds a copy of the extension that Chrome has already detached"
+  },
+  "msgDownloadFailed": {
+    "message": "This site blocked the download. Copy the text instead.",
+    "description": "Shown when the page cancels the download click"
+  },
   "libraryTitle": {
     "message": "Saved texts"
   },

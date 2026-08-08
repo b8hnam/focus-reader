@@ -10,6 +10,13 @@ This is a personal project, updated when there's time for it — see the README 
 
 Nothing yet.
 
+## [1.9.2] — 2026-08-08
+
+### Fixed
+
+- **Download did nothing after the extension was updated** — a page that stayed open across an extension reload keeps a copy of the content script that Chrome has already detached. The temporary link used for downloads belongs to that detached world, so Chrome dropped the download without a word while the panel still reported success. Downloads now check for this and say the page needs reloading, and a window opened on such a page says so as soon as it appears, rather than failing quietly one tool at a time.
+- **Download did nothing at all** — the *Download* tool and the library's plain-text export reported success while Chrome started no download and logged no error. The temporary link they build pointed at a blob address, and a blob minted inside a content script can come back owned by the extension's origin rather than the page's; Chrome ignores the `download` attribute on a cross-origin address and treats the click as a navigation instead, which a page is not permitted to make to an extension URL, so the click quietly went nowhere. The address is now checked, and a `data:` URL — which `download` always honours — is used when the blob comes back cross-origin. The link is also created inside the extension's shadow root now, and the click is checked: sites that capture every anchor click for their own router and call `preventDefault()` on it — techcrunch.com among them — cancelled the download silently, so the click is retried with an event that cannot leave the shadow root, where no page listener is offered the chance to cancel it. If a download is still refused, the panel says so instead of reporting a file that was never written.
+
 ## [1.9.1] — 2026-08-08
 
 ### Changed
@@ -65,7 +72,8 @@ First public release. Earlier versions were private builds used by the author an
 - The content script stays inert until first use — four passive listeners on page load and nothing else.
 - No servers, no analytics, no accounts. See `PRIVACY.md`.
 
-[Unreleased]: https://github.com/b8hnam/focus-reader/compare/v1.9.1...HEAD
+[Unreleased]: https://github.com/b8hnam/focus-reader/compare/v1.9.2...HEAD
+[1.9.2]: https://github.com/b8hnam/focus-reader/compare/v1.9.1...v1.9.2
 [1.9.1]: https://github.com/b8hnam/focus-reader/compare/v1.9.0...v1.9.1
 [1.9.0]: https://github.com/b8hnam/focus-reader/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/b8hnam/focus-reader/releases/tag/v1.8.0

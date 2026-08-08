@@ -749,6 +749,7 @@
 
     if (!hasText && !quiet) flash(w, t("msgNoSelection"));
     else if (flashLater) { flash(w, flashLater); flashLater = ""; }
+    else if (!alive()) flash(w, t("msgStale"));
 
     setTimeout(() => w.el.querySelector('[data-act="close"]').focus(), 30);
     return w;
@@ -1104,19 +1105,60 @@
     }
   }
 
+  /* The link lives inside the shadow root and is clicked with a non-composed
+     event, so the click never crosses the shadow boundary. Sites that capture
+     every anchor click for their own router — chatgpt.com among them — call
+     preventDefault() on it and used to cancel the download before it started.
+     A synthetic click still runs the anchor's activation behaviour, so the
+     file is saved by Chrome exactly as a real click would save it. */
+  /* Two things have to be right for a download to start, and the second one
+     is easy to miss. The link lives in the shadow root so page-level handlers
+     that hijack anchor clicks never see it. The address matters just as much:
+     a blob URL minted inside a content script can come back owned by the
+     extension's origin rather than the page's, and Chrome ignores `download`
+     on a cross-origin address — it treats the click as a navigation instead,
+     which a page may not make to an extension URL, so nothing happened at all
+     and nothing was logged. When the blob comes back cross-origin the anchor
+     gets a data: URL instead, which `download` always honours. */
   function saveFile(name, content, mime) {
-    const blob = new Blob(["\ufeff" + content], { type: mime });
-    const url = URL.createObjectURL(blob);
+    /* A page kept open across an extension reload holds a detached copy of
+       this script; anything it hands Chrome is dead on arrival. */
+    if (!alive()) return null;
+
+    const body = "\ufeff" + content;
+    let url = "", revoke = false;
+    try {
+      const candidate = URL.createObjectURL(new Blob([body], { type: mime }));
+      if (candidate.indexOf("blob:" + location.origin + "/") === 0) { url = candidate; revoke = true; }
+      else URL.revokeObjectURL(candidate);
+    } catch (e) { /* fall through to the data: URL */ }
+    if (!url) url = "data:" + mime + "," + encodeURIComponent(body);
+
     const a = document.createElement("a");
-    a.href = url; a.download = name;
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 4000);
+    a.href = url;
+    a.download = name;
+    a.style.cssText = "position:absolute;width:0;height:0;opacity:0;pointer-events:none";
+    (stage || document.body || document.documentElement).appendChild(a);
+
+    /* A normal click first, so the page behaves as it always does. Some sites
+       (techcrunch.com among them) capture every anchor click for their own
+       router and call preventDefault(), which cancels the download; dispatch
+       reports that, and the retry uses an event that cannot leave the shadow
+       root, so no page listener is ever offered the chance to cancel it. */
+    const opts = { bubbles: true, cancelable: true, view: window };
+    let started = a.dispatchEvent(new MouseEvent("click", { ...opts, composed: true }));
+    if (!started) started = a.dispatchEvent(new MouseEvent("click", { ...opts, composed: false }));
+
+    setTimeout(() => { a.remove(); if (revoke) URL.revokeObjectURL(url); }, 4000);
+    return started;
   }
+
+  const downloadNote = (result) =>
+    t(result === true ? "msgDownloaded" : result === false ? "msgDownloadFailed" : "msgStale");
 
   function downloadText(w) {
     const name = (document.title || "focus-reader").replace(/[\\/:*?"<>|]+/g, " ").trim().slice(0, 60) || "focus-reader";
-    saveFile(name + ".txt", w.body.innerText, "text/plain;charset=utf-8");
-    flash(w, t("msgDownloaded"));
+    flash(w, downloadNote(saveFile(name + ".txt", w.body.innerText, "text/plain;charset=utf-8")));
   }
 
   const fixChars = (s) => s
@@ -1532,8 +1574,7 @@
       const body = saved.map((item) =>
         `--- ${item.title}\n${item.url}\n${new Date(item.ts).toLocaleString(UI_LANG)}\n\n${item.text}\n`
       ).join("\n\n");
-      saveFile("focus-reader-saved.txt", body, "text/plain;charset=utf-8");
-      flash(w, t("msgDownloaded"));
+      flash(w, downloadNote(saveFile("focus-reader-saved.txt", body, "text/plain;charset=utf-8")));
     });
   }
 

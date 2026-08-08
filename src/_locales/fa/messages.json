@@ -197,6 +197,14 @@
   "msgDownloaded": {
     "message": "پرونده ذخیره شد."
   },
+  "msgStale": {
+    "message": "Focus Reader به‌روزرسانی شد — برای استفاده، صفحه را تازه کنید.",
+    "description": "Shown when the page still holds a copy of the extension that Chrome has already detached"
+  },
+  "msgDownloadFailed": {
+    "message": "این سایت جلوی دانلود را گرفت؛ به‌جایش متن را کپی کنید.",
+    "description": "Shown when the page cancels the download click"
+  },
   "libraryTitle": {
     "message": "متن‌های ذخیره‌شده"
   },
