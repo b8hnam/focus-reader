@@ -12,7 +12,7 @@ Built byB8 · [by.b8hnam.com](https://by.b8hnam.com/) · [فارسی](README.fa.
 
 ![Focus Reader settings](docs/media/settings.png)
 
-<!-- VIDEO: drag final.mp4 into this line in GitHub's web editor, then delete this comment -->
+https://github.com/user-attachments/assets/797e61bd-945e-49c3-a3f2-b2ff4a473d1b
 
 **In the video:** three ways to open the panel · multiple windows and the dock · translation in place · bring-your-own-key AI actions · saved texts · side panel · reading style
 
